@@ -58,7 +58,15 @@ const SearchSection = ({ onSearch }) => {
         ))}
       </select>
       <Link to="/find">
-      <button onClick={handleSearch}>Search</button>
+      <button style={{
+        width: '231px',
+        height: '40px',
+        borderRadius: '8px',
+        background: '#2AA8FF',
+        color: 'white',
+        border:'none',
+        cursor:'pointer'
+      }}onClick={handleSearch}>Search</button>
       </Link>
      
       </div>

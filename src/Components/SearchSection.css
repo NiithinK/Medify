@@ -21,21 +21,65 @@
   align-items: start;
 }
 .search-section1 select,
-.search-section button {
-  margin: 0.5rem;
+ 
+  .search-section1 input[type="date"],
+  .search-section1 input[type="time"] {
+    margin: 1.5rem;
+    
+    flex: 1 1 100%; /* Flex-grow, flex-shrink, flex-basis: takes full width on small screens */
+  }
+  .search-section1 button{
+    margin-top: 1.4rem;
+    width: 231px;
+   height: 40px;
+   gap: 0px;
+   border-radius: 8px;
+   opacity: 0px;
+   background: #2AA8FF;
+   color: white;
+   font-family: "poppins";
+   border: none;
+  }
   
-}
-
-select,
-input[type="date"],
-input[type="time"] {
-  margin-top: 20px;
-  padding: 2rem;
-  margin: 0.5rem 0;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
+  select,
+  input[type="date"],
+  input[type="time"] {
+    width: 100%; /* Ensure full width */
+    padding: 1rem; /* Adjust padding for better look on small screens */
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    cursor:'pointer';
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  /* Media queries for responsiveness */
+  @media (min-width: 600px) {
+    .search-section1 select,
+    
+    .search-section1 input[type="date"],
+    .search-section1 input[type="time"] {
+      flex: 1 1 auto; /* Adjust flex for medium to large screens */
+    }
+  
+    select,
+    input[type="date"],
+    input[type="time"] {
+      width: calc(50% - 1rem); /* Two columns on medium screens */
+    }
+  }
+  
+  @media (min-width: 900px) {
+    select,
+    input[type="date"],
+    input[type="time"] {
+      width: calc(33.33% - 1rem); /* Three columns on large screens */
+    }
+    .search-section1 button{
+      cursor:'pointer',
+    }
+  }
+  
 .card-img{
   margin-top: 70px;
   display: flex;

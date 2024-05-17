@@ -6,6 +6,7 @@ import HomePage from './pages/Home';
 import SearchResultsPage from './pages/SearchResultPage';
 import MyBookingsPage from './pages/MyBookingsPage';
 import FindPage from './Components/FindDoctar';
+
 import './App.css'
 const App = () => (
   <Router>
@@ -21,6 +22,7 @@ const App = () => (
       <Route path="/my-bookings" component={MyBookingsPage} />
     </Switch>
     </div>
+    
     </div>
   </Router>
 );

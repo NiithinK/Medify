@@ -1,33 +1,30 @@
 // src/components/BookingModal.js
-import React, { useState } from 'react';
+import React from 'react';
 import './MedicalCenterList.css';
-
-function BookingModal({ center, onClose, onBook }) {
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
-
+import { TiDelete } from "react-icons/ti";
+const BookingModal = ({ center, date, time, onClose, onBook }) => {
   const handleSubmit = () => {
-    onBook({ ...center, date, time });
+    onBook({ center, date, time });
     onClose();
   };
-
+  console.log(center)
   return (
     <div className='modal'>
       <div className='modal-content'>
-        <span className='close' onClick={onClose}>&times;</span>
-        <h2>Book an appointment at {center.name}</h2>
+        <span className='close' onClick={onClose} style={{width:'5rem',height:'5rem' , cursor:'pointer',marginLeft:'auto'}}><TiDelete /></span>
+        <h2>Book an appointment at {center.name} Hospital</h2>
         <label>
-          Date:
-          <input type='date' value={date} onChange={(e) => setDate(e.target.value)} />
-        </label>
+          <h1>{center.State} {center.City}</h1>
+          Date:  {date}
+         </label>
+         <br></br>
         <label>
-          Time:
-          <input type='time' value={time} onChange={(e) => setTime(e.target.value)} />
+          Time:  {time}
         </label>
         <button onClick={handleSubmit}>Book Appointment</button>
       </div>
     </div>
   );
-}
+};
 
 export default BookingModal;

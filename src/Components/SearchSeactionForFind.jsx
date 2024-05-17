@@ -1,4 +1,3 @@
-// src/components/SearchSection.js
 import React, { useEffect, useState } from 'react';
 import { getStates, getCities } from '../services/api';
 import './SearchSeactionForFind.css';
@@ -38,7 +37,13 @@ const SearchSection = ({ onSearch }) => {
           <option key={city} value={city}>{city}</option>
         ))}
       </select>
-      <button onClick={handleSearch}>Search</button>
+      <button
+      style={{
+        cursor:'pointer',
+        width:'231px',
+        height:'40px',
+        background:'#2AA8FF',
+      }} onClick={handleSearch}>Search</button>
       </div>
     </div>
 

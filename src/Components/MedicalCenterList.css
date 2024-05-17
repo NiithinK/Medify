@@ -33,7 +33,7 @@
   margin-left: auto;
   background: #2AA7FF;
   color: white;
-  width: 212px;
+  width: auto;
 
 padding: 9.62px 28.55px 9.38px 29.45px;
 gap: 0px;
@@ -67,19 +67,3 @@ opacity: 0px;
   margin-top: 20px;
 }
 
-.carousel-container h2 {
-  margin-bottom: 10px;
-}
-
-.carousel-container button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-.carousel-container button:hover {
-  background-color: #0056b3;
-}

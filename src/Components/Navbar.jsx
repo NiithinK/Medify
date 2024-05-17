@@ -76,7 +76,7 @@ const Navbar = () => {
           >
             <Link 
               to="/my-bookings" 
-              className={activeLink === "/my-bookings" ? "active-button" : ""}
+              
             >
               My Bookings
             </Link>

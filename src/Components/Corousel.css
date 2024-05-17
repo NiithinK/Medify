@@ -1,0 +1,29 @@
+/* src/components/Carousel.css */
+
+.carousel {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.swiper-container {
+  width: 100%;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  text-align: center;
+  background: #eee;
+  border-radius: 10px;
+  height: 200px; /* Adjust height as needed */
+}
+
+.swiper-slide-content {
+  padding: 1rem;
+}

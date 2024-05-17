@@ -1,0 +1,85 @@
+/* src/components/MedicalCenterList.css */
+
+.medical-center-list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-left: 130px;
+}
+
+.medical-center {
+  background-color: white;
+  padding: 1rem;
+  margin: 5rem 0 0 0;
+  width: 100%;
+  height:auto;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.medical-center h3 {
+  margin: 0 0 0.5rem;
+}
+
+.medical-center p {
+  margin: 0.25rem 0;
+  padding: 0;
+}
+
+.medical-center button {
+ 
+  display: flex;
+  margin-left: auto;
+  background: #2AA7FF;
+  color: white;
+  width: 212px;
+
+padding: 9.62px 28.55px 9.38px 29.45px;
+gap: 0px;
+border-radius: 4px ;
+ border: 1px solid #14BEF0;
+  font-family: "poppins";
+margin-bottom: 30px;
+}
+
+.mess {
+  position: absolute;
+  top: 350px;
+  left: 52rem;
+  z-index: 1;
+}
+
+.mess-img {
+  width: 363px;
+height: 268px;
+top: 481px;
+left: 938px;
+gap: 0px;
+border-radius: 15px ;
+opacity: 0px;
+
+}
+
+
+/* src/components/MedicalCenterList.css */
+.carousel-container {
+  margin-top: 20px;
+}
+
+.carousel-container h2 {
+  margin-bottom: 10px;
+}
+
+.carousel-container button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.carousel-container button:hover {
+  background-color: #0056b3;
+}

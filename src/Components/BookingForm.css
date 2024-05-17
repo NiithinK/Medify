@@ -1,0 +1,21 @@
+/* src/components/BookingForm.css */
+
+.booking-form {
+    background-color: white;
+    padding: 2rem;
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .booking-form input,
+  .booking-form button {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+  

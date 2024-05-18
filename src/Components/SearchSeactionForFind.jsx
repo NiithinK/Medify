@@ -37,7 +37,9 @@ const SearchSection = ({ onSearch }) => {
           <option key={city} value={city}>{city}</option>
         ))}
       </select>
-      <button className='button-bar1' onClick={handleSearch}>Search</button>
+      
+      {/* <button className='button-bar1' onClick={handleSearch}>Search</button> */}
+      <Button className='button-bar1'  onClick={{handleSearch}}> Search</Button>
       </div>
     </div>
 

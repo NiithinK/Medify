@@ -31,10 +31,11 @@ function MedicalCenterList({ centers, onBook }) {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const[carouselOpen,setCarouselOpens] = useState(false);
   const handleBookClick = (centerId) => {
     setSelectedCenterId(centerId);
-  };
+    setCarouselOpens('true');
+  }
 
   const handleDateSelect = (date) => {
     setSelectedDate(date);
@@ -42,6 +43,8 @@ function MedicalCenterList({ centers, onBook }) {
 
   const handleModalClose = () => {
     setIsModalOpen(false);
+    setCarouselOpens(false);
+    
   };
 
   const handleBookingConfirm = (bookingDetails) => {
@@ -81,7 +84,7 @@ function MedicalCenterList({ centers, onBook }) {
               <BiSolidLike /> {center.rating}
             </p>
             <button onClick={() => handleBookClick(center.id)}>Book Free center visit</button>
-            {selectedCenterId === center.id && (
+            {carouselOpen && selectedCenterId === center.id && (
               <div className='carousel-container'>
                 <h2>Select a Date for {center.name}</h2>
                 <div className="carousel">
@@ -104,7 +107,7 @@ function MedicalCenterList({ centers, onBook }) {
                     ))}
                   </Swiper>
                 </div>
-                {selectedDate && (
+                {carouselOpen && selectedDate && (
                   <BookingForm onTimeSelect={handleTimeSelect} />
                 )}
                 {isModalOpen &&

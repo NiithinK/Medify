@@ -11,6 +11,8 @@ import { Navigation, Pagination } from 'swiper/modules';
 import BookingForm from './BookingTable';
 import BookingModal from './BookingModal';
 import MyBookingsPage from '../pages/MyBookingsPage';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 // Helper function to generate dynamic dates
 const generateDates = (numDays) => {
@@ -31,10 +33,12 @@ function MedicalCenterList({ centers, onBook }) {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const[carouselOpen,setCarouselOpens] = useState(false);
+  const [carouselOpen, setCarouselOpen] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+
   const handleBookClick = (centerId) => {
     setSelectedCenterId(centerId);
-    setCarouselOpens('true');
+    setCarouselOpen(true);
   }
 
   const handleDateSelect = (date) => {
@@ -43,8 +47,7 @@ function MedicalCenterList({ centers, onBook }) {
 
   const handleModalClose = () => {
     setIsModalOpen(false);
-    setCarouselOpens(false);
-    
+    setCarouselOpen(false);
   };
 
   const handleBookingConfirm = (bookingDetails) => {
@@ -56,6 +59,7 @@ function MedicalCenterList({ centers, onBook }) {
     
     // Handle booking confirmation logic here
     setIsModalOpen(false); // Close the modal after booking confirmation
+    setSnackbarOpen(true); // Show snackbar after booking confirmation
   };
 
   const handleTimeSelect = (time) => {
@@ -65,6 +69,13 @@ function MedicalCenterList({ centers, onBook }) {
 
   // Generate 7 dynamic dates
   const dates = generateDates(7);
+
+  const handleSnackbarClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setSnackbarOpen(false);
+  };
 
   return (
     <>
@@ -127,6 +138,15 @@ function MedicalCenterList({ centers, onBook }) {
       <div className='mess'>
         <img src={mess} alt="Message" />
       </div>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+      >
+        <Alert onClose={handleSnackbarClose} severity="success" sx={{ width: '100vw',textAlign:'center',fontSize:'25px' }}>
+          Booking Confirmed, visit My booking page
+        </Alert>
+      </Snackbar>
     </>
   );
 }

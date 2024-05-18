@@ -6,7 +6,7 @@ import SearchSeactionForFind from './SearchSeactionForFind';
 import MedicalCenterList from '../Components/MedicalCenterList';
 import { getMedicalCenters } from '../services/api';
 import {  Link } from "react-router-dom";
-
+import footer from '../Assests/footer.png'
 
 
 
@@ -35,6 +35,7 @@ export default function FindPage(){
             
            <SearchSeactionForFind onSearch={handleSearch}/>
             <MedicalCenterList centers={centers} onBook={(center) => console.log('Book', center)} /> 
+          
         </div>
         </>
     );

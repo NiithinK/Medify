@@ -1,7 +1,9 @@
+// src/components/SearchSection.js
 import React, { useEffect, useState } from 'react';
 import { getStates, getCities } from '../services/api';
-import './SearchSeactionForFind.css';
 import { Button } from '@mui/material';
+import './SearchSeactionForFind.css';
+
 const SearchSection = ({ onSearch }) => {
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
@@ -37,31 +39,14 @@ const SearchSection = ({ onSearch }) => {
           <option key={city} value={city}>{city}</option>
         ))}
       </select>
-      
-      {/* <button className='button-bar1' onClick={handleSearch}>Search</button> */}
-      <Button sx={{
-        marginTop: '1.4rem',
-    width: '231px',
-   height: '40px',
-   gap: '0px',
-   borderRadius: '8px',
-   background: '#2AA8FF',
-   color: 'white',
-   fontFamily:'poppins',}} onClick={{handleSearch}}> Search</Button>
+      <Button sx={{ marginTop: '1.4rem', width: '231px', height: '40px', borderRadius: '8px',background: '#2AA8FF', color: 'white', fontFamily:'poppins',}} 
+      onClick={handleSearch}>Search</Button>
       </div>
     </div>
 
-   
+
     </>
   );
 };
 
 export default SearchSection;
-
-// <Button
-//       sx={{
-//         cursor:'pointer',
-//         width:'231px',
-//         height:'40px',
-//         background:'#2AA8FF',
-//       }} onClick={handleSearch}>Search</Button>

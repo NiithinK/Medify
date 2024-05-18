@@ -21,7 +21,7 @@ const BookingModal = ({ center, date, time, onClose, onBook }) => {
         <label>
           Time:  {time}
         </label>
-        <button onClick={handleSubmit}>Book Appointment</button>
+        <button style={{cursor:'pointer'}} onClick={handleSubmit}>Book Appointment</button>
       </div>
     </div>
   );

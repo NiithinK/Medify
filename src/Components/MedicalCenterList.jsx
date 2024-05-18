@@ -8,8 +8,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-import BookingForm from './BookingForm';
+import BookingForm from './BookingTable';
 import BookingModal from './BookingModal';
+import MyBookingsPage from '../pages/MyBookingsPage';
 
 // Helper function to generate dynamic dates
 const generateDates = (numDays) => {
@@ -45,6 +46,11 @@ function MedicalCenterList({ centers, onBook }) {
 
   const handleBookingConfirm = (bookingDetails) => {
     console.log('Booking confirmed:', bookingDetails);
+    // Save booking details to local storage
+    const existingBookings = JSON.parse(localStorage.getItem('bookings')) || [];
+    existingBookings.push(bookingDetails);
+    localStorage.setItem('bookings', JSON.stringify(existingBookings));
+    
     // Handle booking confirmation logic here
     setIsModalOpen(false); // Close the modal after booking confirmation
   };
@@ -102,13 +108,13 @@ function MedicalCenterList({ centers, onBook }) {
                   <BookingForm onTimeSelect={handleTimeSelect} />
                 )}
                 {isModalOpen &&
-                  <BookingModal
+                  (<BookingModal
                     center={center}
                     date={selectedDate}
                     time={selectedTime}
                     onClose={handleModalClose}
                     onBook={handleBookingConfirm}
-                  />
+                  />)
                 }
               </div>
             )}

@@ -58,7 +58,7 @@ const BasicTable = ({ onTimeSelect }) => {
               </TableCell>
               {row.times.map((time) => (
                 <TableCell key={time} align="right">
-                  <button onClick={() => onTimeSelect(time)}>{time}</button>
+                  <button style={{cursor:'pointer'}} onClick={() => onTimeSelect(time)}>{time}</button>
                 </TableCell>
               ))}
             </TableRow>

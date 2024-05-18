@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getStates, getCities } from '../services/api';
 import './SearchSeactionForFind.css';
-
+import { Button } from '@mui/material';
 const SearchSection = ({ onSearch }) => {
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
@@ -37,13 +37,13 @@ const SearchSection = ({ onSearch }) => {
           <option key={city} value={city}>{city}</option>
         ))}
       </select>
-      <button
+      <Button
       style={{
         cursor:'pointer',
         width:'231px',
         height:'40px',
         background:'#2AA8FF',
-      }} onClick={handleSearch}>Search</button>
+      }} onClick={handleSearch}>Search</Button>
       </div>
     </div>
 

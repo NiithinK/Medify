@@ -1,7 +1,7 @@
 // src/pages/HomePage.js
 import React, { useState, useEffect } from 'react';
 import SearchSection from '../Components/SearchSection';
-import MedicalCenterList from '../Components/MedicalCenterList';
+
 import Carousel from '../Components/Carousel';
 import './Home.css';
 import "@fontsource/poppins"; 
@@ -35,7 +35,7 @@ const HomePage = () => {
       <SearchSection onSearch={handleSearch} />
       
       {/* {/* <Carousel items={carouselItems} /> */}
-      {/* <MedicalCenterList centers={centers} onBook={(center) => console.log('Book', center)} />  */}
+     
     </div>
     </div>
   );

@@ -3,17 +3,19 @@
 .my-bookings {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
+    margin-left: 20rem;
   }
   
   .booking {
     background-color: white;
     padding: 1rem;
     margin: 1rem 0;
-    width: 100%;
-    max-width: 600px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 786px;
+    height: auto;
+   margin-left: 136px;
+ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
   
   .booking h3 {
@@ -23,4 +25,14 @@
   .booking p {
     margin: 0.25rem 0;
   }
+  .booking-date{
+    display: flex;
+    float: right;
+    flex-direction: column;
+  }
+  .booking-date p{
+    padding: 0;
+    margin: none;
+  }
+
   

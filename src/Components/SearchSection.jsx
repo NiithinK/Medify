@@ -9,7 +9,7 @@ import card4 from '../Assests/card_service-4.png';
 import card5 from '../Assests/card_service.png';
 import { FaBeer } from 'react-icons/fa';
 import {  Link } from "react-router-dom";
-
+import { Button } from '@mui/material';
 const SearchSection = ({ onSearch }) => {
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
@@ -58,7 +58,7 @@ const SearchSection = ({ onSearch }) => {
         ))}
       </select>
       <Link to="/find">
-      <button style={{
+      <Button style={{
         width: '231px',
         height: '40px',
         borderRadius: '8px',
@@ -66,7 +66,7 @@ const SearchSection = ({ onSearch }) => {
         color: 'white',
         border:'none',
         cursor:'pointer'
-      }}onClick={handleSearch}>Search</button>
+      }}onClick={handleSearch}>Search</Button>
       </Link>
      
       </div>

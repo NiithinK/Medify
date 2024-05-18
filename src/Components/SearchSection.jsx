@@ -61,7 +61,15 @@ const SearchSection = ({ onSearch }) => {
       
       {/* <button className='button-bar' onClick={handleSearch}>Search</button> */}
       
-      <Button className='button-bar' onClick={handleSearch}>Search</Button>
+      <Button sx={{
+        marginTop: '1.4rem',
+    width: '231px',
+   height: '40px',
+   gap: '0px',
+   borderRadius: '8px',
+   background: '#2AA8FF',
+   color: 'white',
+   fontFamily:'poppins',}} onClick={handleSearch}>Search</Button>
       </Link>
      
       </div>

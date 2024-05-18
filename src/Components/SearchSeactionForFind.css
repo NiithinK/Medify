@@ -29,18 +29,7 @@
     margin: 1.5rem;
     flex: 1 1 100%; /* Flex-grow, flex-shrink, flex-basis: takes full width on small screens */
   }
-  .search1 button{
-    margin-top: 1.4rem;
-    width: 231px;
-   height: 40px;
-   gap: 0px;
-   border-radius: 8px;
-   opacity: 0px;
-   background: #2AA8FF;
-   color: white;
-   font-family: "poppins";
-   border: none;
-  }
+
   
   select,
   input[type="date"],
@@ -79,4 +68,15 @@
 
     }
   }
-  
+  .button-bar1{
+    margin-top: 1.4rem;
+    width: 231px;
+   height: 40px;
+   gap: 0px;
+   border-radius: 8px;
+   opacity: 0px;
+   background: #2AA8FF;
+   color: white;
+   font-family: "poppins";
+   border: none;
+  }

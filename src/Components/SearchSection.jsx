@@ -58,7 +58,8 @@ const SearchSection = ({ onSearch }) => {
         ))}
       </select>
       <Link to="/find">
-      <Button onClick={handleSearch}>Search</Button>
+      
+      <button className='button-bar' onClick={handleSearch}>Search</button>
       </Link>
      
       </div>

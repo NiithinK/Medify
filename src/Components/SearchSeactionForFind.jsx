@@ -38,7 +38,7 @@ const SearchSection = ({ onSearch }) => {
         ))}
       </select>
       <Button
-      style={{
+      sx={{
         cursor:'pointer',
         width:'231px',
         height:'40px',

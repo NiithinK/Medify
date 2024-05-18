@@ -58,7 +58,7 @@ const SearchSection = ({ onSearch }) => {
         ))}
       </select>
       <Link to="/find">
-      <Button style={{
+      <Button sx={{
         width: '231px',
         height: '40px',
         borderRadius: '8px',

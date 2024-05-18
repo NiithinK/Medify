@@ -38,12 +38,7 @@ const SearchSection = ({ onSearch }) => {
         ))}
       </select>
       <Button
-      sx={{
-        cursor:'pointer',
-        width:'231px',
-        height:'40px',
-        background:'#2AA8FF',
-      }} onClick={handleSearch}>Search</Button>
+       onClick={handleSearch}>Search</Button>
       </div>
     </div>
 
@@ -53,3 +48,11 @@ const SearchSection = ({ onSearch }) => {
 };
 
 export default SearchSection;
+
+// <Button
+//       sx={{
+//         cursor:'pointer',
+//         width:'231px',
+//         height:'40px',
+//         background:'#2AA8FF',
+//       }} onClick={handleSearch}>Search</Button>

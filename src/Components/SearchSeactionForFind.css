@@ -17,7 +17,7 @@
   
   .search1 {
     display: flex;
-   flex-direction: row; /* Allow wrapping */
+    flex-direction: row; /* Allow wrapping */
     justify-content: space-around;
     align-items: start;
   }
@@ -65,10 +65,10 @@
       width: calc(33.33% - 1rem); /* Three columns on large screens */
     }
     .search-section1 button{
-
+      cursor:'pointer',
     }
   }
-  /* .button-bar1{
+  .button-bar1{
     margin-top: 1.4rem;
     width: 231px;
    height: 40px;
@@ -79,4 +79,4 @@
    color: white;
    font-family: "poppins";
    border: none;
-  } */
+  }

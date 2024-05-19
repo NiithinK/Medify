@@ -3,10 +3,11 @@
 .search-section{
   
   margin-top: 250px;
-  width: 900px;
+  width: 90%; /* Adjust width to be more flexible */
+  max-width: 900px; /* Max width to keep it from being too wide */
   height: 50%;
   position: absolute;
-  top: 1; 
+  top: 50%; 
   left: 50%; 
   transform: translate(-50%, -50%); 
   z-index: 1;
@@ -17,6 +18,7 @@
 }
 .search-section1{
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: start;
 }
@@ -25,7 +27,6 @@
   .search-section1 input[type="date"],
   .search-section1 input[type="time"] {
     margin: 1.5rem;
-    
     flex: 1 1 100%; /* Flex-grow, flex-shrink, flex-basis: takes full width on small screens */
   }
   .search-section1 button{
@@ -44,8 +45,9 @@
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
   }
   
-  /* Media queries for responsiveness */
-  @media (min-width: 600px) {
+  
+   /* Media queries for responsiveness */
+   @media (min-width: 450px) {
     .search-section1 select,
     
     .search-section1 input[type="date"],
@@ -70,6 +72,7 @@
       cursor:'pointer',
     }
   }
+ 
   
 .card-img{
   margin-top: 70px;
@@ -79,7 +82,7 @@
   width:180px ;
   height: 120px;
 }
-/* .button-bar{
+.button123{
   margin-top: 1.4rem;
   width: 231px;
  height: 40px;
@@ -90,4 +93,37 @@
  color: white;
  font-family: "poppins";
  border: none;
-} */
+}
+
+/* Hide image on smaller screens */
+@media (max-width: 600px) {
+  .card-img {
+    display: none;
+  }
+}
+@media (min-width: 450px) {
+  .search-section1 select,
+  
+  .search-section1 input[type="date"],
+  .search-section1 input[type="time"] {
+    flex: 1 1 auto; /* Adjust flex for medium to large screens */
+  }
+
+  select,
+  input[type="date"],
+  input[type="time"] {
+    width: calc(50% - 1rem); /* Two columns on medium screens */
+  }
+  
+}
+
+@media (min-width: 900px) {
+  select,
+  input[type="date"],
+  input[type="time"] {
+    width: calc(33.33% - 1rem); /* Three columns on large screens */
+  }
+  .search-section1 button{
+    cursor:'pointer',
+  }
+}

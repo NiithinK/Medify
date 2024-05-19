@@ -1,38 +1,48 @@
 /* src/components/MyBookings.css */
 
 .my-bookings {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    margin-left: 20rem;
-  }
-  
-  .booking {
-    background-color: white;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 10px;
-    width: 786px;
-    height: auto;
-   margin-left: 136px;
- box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  .booking h3 {
-    margin: 0 0 0.5rem;
-  }
-  
-  .booking p {
-    margin: 0.25rem 0;
-  }
-  .booking-date{
-    display: flex;
-    float: right;
-    flex-direction: column;
-  }
-  .booking-date p{
-    padding: 0;
-    margin: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items on mobile */
+  padding: 0 1rem; /* Add some padding to the sides */
+}
+
+.booking {
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  width: 100%; /* Take full width */
+  max-width: 786px; /* Maximum width */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.booking h3 {
+  margin: 0 0 0.5rem;
+}
+
+.booking p {
+  margin: 0.25rem 0;
+}
+
+.booking-date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align to the right on mobile */
+}
+
+.booking-date p {
+  margin: 0; /* Remove margin */
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  .my-bookings {
+    margin-left: 0; /* Remove left margin on smaller screens */
   }
 
-  
+  .booking {
+    margin-left: 0; /* Remove left margin */
+    padding: 0.5rem; /* Decrease padding */
+  }
+}

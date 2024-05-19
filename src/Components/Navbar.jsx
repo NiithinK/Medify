@@ -73,13 +73,7 @@ const Navbar = () => {
           <button 
             style={{ backgroundColor: '#2AA7FF', color: 'white', padding: '0.5rem 1rem', cursor: 'pointer', borderRadius: '5px', border: 'none' }}
             onClick={() => handleLinkClick("/my-bookings")}
-          >
-            <Link 
-              to="/my-bookings" 
-              
-            >
-              My Bookings
-            </Link>
+          ><Link  to="/my-bookings"  > My Bookings </Link>
           </button>
         </li>
       </ul>

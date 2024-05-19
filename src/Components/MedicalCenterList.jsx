@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import './MedicalCenterList.css';
 import hos_logo from '../Assests/div.u-pos-has.png';
 import { BiSolidLike } from "react-icons/bi";
+import { FaBars } from 'react-icons/fa'; // Import the hamburger icon
 import mess from '../Assests/group.png';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import BookingForm from './BookingTable';
@@ -29,6 +31,7 @@ const generateDates = (numDays) => {
 };
 
 function MedicalCenterList({ centers, onBook }) {
+  const [navOpen, setNavOpen] = useState(false);
   const [selectedCenterId, setSelectedCenterId] = useState(null);
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
@@ -36,10 +39,14 @@ function MedicalCenterList({ centers, onBook }) {
   const [carouselOpen, setCarouselOpen] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
 
+  const toggleNav = () => {
+    setNavOpen(!navOpen);
+  };
+
   const handleBookClick = (centerId) => {
     setSelectedCenterId(centerId);
     setCarouselOpen(true);
-  }
+  };
 
   const handleDateSelect = (date) => {
     setSelectedDate(date);
@@ -79,22 +86,34 @@ function MedicalCenterList({ centers, onBook }) {
 
   return (
     <>
+      <nav>
+        <div className="hamburger" onClick={toggleNav}>
+          <FaBars />
+        </div>
+        <ul className={navOpen ? 'show' : ''} style={{marginLeft:'30rem'}}>
+          <li><Link to='/'>Home</Link></li>  
+          <li><Link to='/find'>Find Doctor</Link></li>
+          <li><Link to='/'>Software</Link></li>
+          <li><Link to='/my-bookings'>My Booking</Link></li>
+        </ul>
+      </nav>
       <div className='medical-center-list'>
         {centers.map(center => (
-          <div key={center.id} className='medical-center'>
+          <div key={center['Provider ID']} className='medical-center'>
             <img src={hos_logo} alt={`${center.name} logo`} />
-            <h3>{center.name}</h3>
+            <h3>{center['Hospital Name']}</h3>
             <p>{center.Address}</p>
-            <p>{center.City}, {center.State} {center.zip}</p>
+            <p>{center.City}, {center.State} ,{center['ZIP Code']}</p>
             <p className="consultation-fee">
               <span className="hero-title-black">Free </span>
               <span>₹ 500 </span>
               <span className="hero-title-blue">Consultation fee at clinic</span>
             </p>
             <p className="center-rating">
-              <BiSolidLike /> {center.rating}
+              <BiSolidLike /> {center['Hospital overall rating']}
             </p>
             <button onClick={() => handleBookClick(center.id)}>Book Free center visit</button>
+            
             {carouselOpen && selectedCenterId === center.id && (
               <div className='carousel-container'>
                 <h2>Select a Date for {center.name}</h2>

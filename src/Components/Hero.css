@@ -94,7 +94,7 @@ src/components/Hero.css
   }
 
   .hero-font {
-    margin-left: 80px;
+    margin-left: 30px;
     padding: 0;
     margin-bottom: 0;
   }
@@ -122,4 +122,8 @@ src/components/Hero.css
 }
 
 
-
+@media (max-width: 767px) {
+  .hero-img {
+    display: none;
+  }
+}

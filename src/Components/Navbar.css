@@ -1,8 +1,9 @@
-/* src/components/Navbar.css */
-
 nav {
   padding: 1rem;
   margin-right: 10rem;
+  display: flex;
+  justify-content: space-between; /* Adjust for spacing between nav items */
+  align-items: center; /* Center items vertically */
 }
 
 nav ul {
@@ -40,18 +41,37 @@ nav a.active-button {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 650px) {
   nav {
     flex-direction: column; /* Stack items vertically for smaller screens */
     align-items: center; /* Center items vertically */
+    margin-right: 0; /* Remove the right margin */
   }
 
   nav ul {
     display: none; /* Hide the regular navigation links */
+    flex-direction: column; /* Stack nav items vertically */
+    width: 100%; /* Make sure it fits the screen width */
+  }
+
+  nav ul.show {
+    display: flex; /* Display nav items when hamburger is clicked */
+  }
+
+  nav li {
+    margin: 1rem 0; /* Add margin to the vertical stack */
+  }
+
+  nav a {
+    font-size: 1rem; /* Adjust font size for smaller screens */
   }
 
   .hamburger {
     display: block; /* Display the hamburger icon */
     cursor: pointer;
+    font-size: 1.5rem;
+    margin-top: 3rem; /* Adjust size of hamburger icon */
+    margin-right: 1rem;
+    margin-left: 20rem; /* Add some margin to align properly */
   }
 }

@@ -1,4 +1,3 @@
-// src/pages/HomePage.js
 import React, { useState, useEffect } from 'react';
 import SearchSection from '../Components/SearchSection';
 
@@ -28,15 +27,12 @@ const HomePage = () => {
   return (
     <div>
       <div className='hero-Back'>
-        
-    <div className='Header'>
-        <Hero/>
-    </div>
-      <SearchSection onSearch={handleSearch} />
-      
-      {/* {/* <Carousel items={carouselItems} /> */}
-     
-    </div>
+        <div className='Header'>
+            <Hero/>
+        </div>
+       <SearchSection onSearch={handleSearch} />
+       {/* {/* <Carousel items={carouselItems} /> */}
+      </div>
     </div>
   );
 };

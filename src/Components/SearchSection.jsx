@@ -32,17 +32,7 @@ const SearchSection = ({ onSearch }) => {
   return (
     <>
     <div className='search-section' style={{
-      marginTop: '250px',
-      width: '900px',
-      height: '50%',
-      position: 'absolute',
-      top: '50%', 
-      left: '50%', 
-      transform: 'translate(-50%, -50%)',
-      background: 'white',
-      bordeRadius: '10px',
-      padding: '20px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+      
     }}>
       <div className='search-section1'>
       <select onChange={(e) => handleStateChange(e.target.value)}>
@@ -59,17 +49,9 @@ const SearchSection = ({ onSearch }) => {
       </select>
       <Link to="/find">
       
-      {/* <button className='button-bar' onClick={handleSearch}>Search</button> */}
-      
-      <Button sx={{
-        marginTop: '1.4rem',
-    width: '231px',
-   height: '40px',
-   gap: '0px',
-   borderRadius: '8px',
-   background: '#2AA8FF',
-   color: 'white',
-   fontFamily:'poppins',}} onClick={handleSearch}>Search</Button>
+     
+      <Button sx={{ marginTop: '1.4rem', width: '231px', height: '40px', borderRadius: '8px',background: '#2AA8FF', color: 'white', fontFamily:'poppins',}} 
+      onClick={handleSearch}>Search</Button>
       </Link>
      
       </div>

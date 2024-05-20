@@ -1,34 +1,83 @@
-// src/components/Carousel.js
-import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
-import './Corousel.css'
-const Carousel = ({ items, setTime }) => {
-  
-  return (
-    <div className="carousel">
-      <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={50}
-        slidesPerView={3}
-        navigation
-        
-      >
-        {items.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="swiper-slide-content">
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-              
-              <div key={index} className="carousel-item" onClick={() => setTime(item)}></div>
-              <p style={{fontSize:'14px',cursor:'pointer'}}>{item}</p>
-            </div>
-          </SwiperSlide>
+import React, { useState, useEffect, useRef } from 'react';
+import './Corousel.css'; // Import your CSS file for styling
+
+const Carousel = ({ images, interval = 5000 }) => {
+  const [slidesPerView, setSlidesPerView] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const carouselRef = useRef(null);
+  const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    const calculateSlidesPerView = () => {
+      const carouselWidth = carouselRef.current.offsetWidth;
+      const itemWidth = carouselRef.current.querySelector('.carousel-item').offsetWidth;
+      const newSlidesPerView = Math.floor(carouselWidth / itemWidth);
+      setSlidesPerView(newSlidesPerView > 0 ? newSlidesPerView : 1);
+    };
+
+    calculateSlidesPerView();
+    window.addEventListener('resize', calculateSlidesPerView);
+
+    return () => {
+      window.removeEventListener('resize', calculateSlidesPerView);
+    };
+  }, []);
+
+  useEffect(() => {
+    const nextSlide = () => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - slidesPerView ? 0 : prevIndex + 1
+      );
+    };
+
+    timeoutRef.current = setTimeout(nextSlide, interval);
+
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [currentIndex, images, interval, slidesPerView]);
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+    clearTimeout(timeoutRef.current);
+  };
+
+  const renderPagination = () => {
+    return (
+      <div className="pagination">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            className={`pagination-btn ${index === currentIndex ? 'active' : ''}`}
+            onClick={() => goToSlide(index)}
+          >
+            {index + 1}
+          </button>
         ))}
-      </Swiper>
+      </div>
+    );
+  };
+
+  return (
+    <div className="carousel-container" ref={carouselRef}>
+      <div className="carousel">
+        <div
+          className="carousel-inner"
+          style={{
+            transform: `translateX(-${currentIndex * (100 / slidesPerView)}%)`,
+            width: `${images.length * (100 / slidesPerView)}%`,
+          }}
+        >
+          {images.map((image, index) => (
+            <div key={index} className="carousel-item">
+              <img src={image.src} alt={image.alt} />
+            </div>
+          ))}
+        </div>
+      </div>
+      {renderPagination()}
     </div>
   );
 };

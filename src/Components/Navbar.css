@@ -15,7 +15,7 @@ nav ul {
 }
 
 nav li {
-  margin: 0 1rem;
+  margin: 0 1.3rem;
 }
 
 nav a {
@@ -59,11 +59,11 @@ nav a.active-button {
   }
 
   nav li {
-    margin: 1rem 0; /* Add margin to the vertical stack */
+    margin: .8rem 0; /* Add margin to the vertical stack */
   }
 
   nav a {
-    font-size: 1rem; /* Adjust font size for smaller screens */
+    font-size: 11px; /* Adjust font size for smaller screens */
   }
 
   .hamburger {

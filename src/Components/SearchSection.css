@@ -29,10 +29,7 @@
     margin: 1.5rem;
     flex: 1 1 100%; /* Flex-grow, flex-shrink, flex-basis: takes full width on small screens */
   }
-  .search-section1 button{
-    
-  }
-  
+ 
   select,
   input[type="date"],
   input[type="time"] {
@@ -82,21 +79,9 @@
   width:180px ;
   height: 120px;
 }
-.button123{
-  margin-top: 1.4rem;
-  width: 231px;
- height: 40px;
- gap: 0px;
- border-radius: 8px;
- opacity: 0px;
- background: #2AA8FF;
- color: white;
- font-family: "poppins";
- border: none;
-}
 
 /* Hide image on smaller screens */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .card-img {
     display: none;
   }
@@ -124,6 +109,8 @@
     width: calc(33.33% - 1rem); /* Three columns on large screens */
   }
   .search-section1 button{
-    cursor:'pointer',
+    cursor:'pointer';
+    width: auto;
+    
   }
 }

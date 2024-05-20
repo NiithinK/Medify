@@ -23,7 +23,7 @@ const MyBookingsPage = () => {
         <div style={{background: 'linear-gradient(81deg, #E7F0FF 9.01%, rgba(232, 241, 255, 0.47) 89.11%'}}>
             
         <MyBookings bookings={bookings} />
-        <img src={footer}alt="" />
+        
         </div>
         
     </div>

@@ -50,19 +50,20 @@ const SearchSection = ({ onSearch }) => {
       <Link to="/find">
       
      
-      <Button sx={{ marginTop: '1.4rem', width: '231px', height: '40px', borderRadius: '8px',background: '#2AA8FF', color: 'white', fontFamily:'poppins',}} 
+      <Button sx={{ marginTop: '1.4rem', width: '170px', height: '40px', borderRadius: '8px',background: '#2AA8FF', color: 'white', fontFamily:'poppins',}} 
       onClick={handleSearch}>Search</Button>
+      
       </Link>
      
       </div>
       <p style={{textAlign:'center',marginTop:'25px',fontSize:'20px',fontWeight:'500'}}>You May be Looking for</p>
       <div className='card-img'>
         
-      <img src={card5} alt="Hero" />
-      <img src={card1} alt="Hero" />
-      <img src={card2} alt="Hero" />
-      <img src={card3} alt="Hero" />
-      <img src={card4} alt="Hero" />
+        <img src={card5} alt="Hero" />
+        <img src={card1} alt="Hero" />
+        <img src={card2} alt="Hero" />
+        <img src={card3} alt="Hero" />
+        <img src={card4} alt="Hero" />
       
       </div>
     </div>

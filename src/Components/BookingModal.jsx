@@ -1,7 +1,7 @@
 // src/components/BookingModal.js
 import React from 'react';
 import './MedicalCenterList.css';
-import './BookingModal.css'
+// import './BookingModal.css'
 import { TiDelete } from "react-icons/ti";
 const BookingModal = ({ center, date, time, onClose, onBook }) => {
   const handleSubmit = () => {

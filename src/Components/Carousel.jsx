@@ -39,27 +39,6 @@ const Carousel = ({ images, interval = 5000 }) => {
     };
   }, [currentIndex, images, interval, slidesPerView]);
 
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-    clearTimeout(timeoutRef.current);
-  };
-
-  const renderPagination = () => {
-    return (
-      <div className="pagination">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            className={`pagination-btn ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-          >
-            {index + 1}
-          </button>
-        ))}
-      </div>
-    );
-  };
-
   return (
     <div className="carousel-container" ref={carouselRef}>
       <div className="carousel">
@@ -77,7 +56,6 @@ const Carousel = ({ images, interval = 5000 }) => {
           ))}
         </div>
       </div>
-      {renderPagination()}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Corousel.css'; // Import your CSS file for styling
 
-const Carousel = ({ images, interval = 5000 }) => {
+const Carousel = ({ images, interval = 2000 }) => {
   const [slidesPerView, setSlidesPerView] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef(null);

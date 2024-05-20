@@ -24,6 +24,9 @@ const HomePage = () => {
     { src: car1, alt: 'Car 1' },
     { src: car2, alt: 'Car 2' },
     { src: car1, alt: 'Car 1' },
+    { src: car1, alt: 'Car 1' },
+    { src: car2, alt: 'Car 2' },
+    { src: car1, alt: 'Car 1' },
     // Repeat as needed
   ];
 

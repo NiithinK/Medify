@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchSection from '../Components/SearchSection';
-import car1 from '../Assests/Group 11.png';
-import car2 from '../Assests/Group 12.png';
+import car1 from '../Assests/Group11.png';
+import car2 from '../Assests/Group12.png';
 import Carousel from '../Components/Carousel';
 import './Home.css';
 import "@fontsource/poppins"; 
@@ -34,7 +34,7 @@ const HomePage = () => {
             <Hero/>
         </div>
        <SearchSection onSearch={handleSearch} />
-       <Carousel images={images} interval={3000} />
+       <Carousel images={images} interval={5000} />
       </div>
     </div>
   );

@@ -1,6 +1,23 @@
+body {
+  height: 200vh;
+}
 
- 
+.service, .mobile, .footer,.doctar,.footer {
+  width: 100%;
+  height: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
-  body{
-    height: 200vh;
+.doctar {
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .service, .mobile, .footer {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
+}

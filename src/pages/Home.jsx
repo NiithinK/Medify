@@ -7,6 +7,10 @@ import './Home.css';
 import "@fontsource/poppins"; 
 import { getMedicalCenters } from '../services/api';
 import Hero from '../Components/Hero';
+import services from '../Assests/Group13.png' ;
+import doctar from '../Assests/doctar.png';
+import mobile from '../Assests/mobile.png';
+import footer from '../Assests/footer.png';
 
 const HomePage = () => {
   const [centers, setCenters] = useState([]);
@@ -37,7 +41,13 @@ const HomePage = () => {
             <Hero/>
         </div>
        <SearchSection onSearch={handleSearch} />
-       <Carousel images={images} interval={5000} />
+       <Carousel images={images} interval={2000} />
+      <img className='service' src={services} alt="" />
+      <div style={{background:'background: linear-gradient(81deg, #E7F0FF 9.01%, rgba(232, 241, 255, 0.47) 89.11%);',height:'486px'}}>
+        <img className='doctar' src={doctar} alt="" />
+      </div>
+      <img className='mobile' src={mobile} alt="" />
+      <img className='footer' src={footer} alt="" />
       </div>
     </div>
   );

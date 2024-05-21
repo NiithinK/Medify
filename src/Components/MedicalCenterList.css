@@ -104,4 +104,7 @@
   .mess {
     display: none; /* Hide the mess image on screens 480px or less */
   }
+}.carousel-item.selected {
+  border: 2px solid #007bff; /* Change the color to your desired border color */
+  border-radius: 5px;
 }

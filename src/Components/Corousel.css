@@ -23,35 +23,3 @@
   height: auto;
 }
 
-/* Custom Swiper navigation buttons */
-.swiper-button-prev,
-.swiper-button-next {
-  width: 30px; /* Set the width of the buttons */
-  height: 30px; /* Set the height of the buttons */
-  line-height: 30px; /* Center the icon vertically */
-  border-radius: 50%; /* Make the buttons circular */
-  background-color: rgba(0, 0, 0, 0.5); /* Background color with opacity */
-  color: white; /* Color of the buttons */
-  font-size: 18px; /* Font size of the buttons */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s; /* Add a transition effect */
-}
-
-/* Style the previous button */
-.swiper-button-prev {
-  left: 10px; /* Position the previous button */
-}
-
-/* Style the next button */
-.swiper-button-next {
-  right: 10px; /* Position the next button */
-}
-
-/* Hover effect for the buttons */
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  background-color: rgba(0, 0, 0, 0.8); /* Darken the background on hover */
-}

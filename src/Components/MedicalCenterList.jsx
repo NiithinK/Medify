@@ -115,7 +115,7 @@ function MedicalCenterList({ centers, onBook }) {
             <button onClick={() => handleBookClick(center.id)}>Book Free center visit</button>
             
             {carouselOpen && selectedCenterId === center.id && (
-              <div className='carousel-container'>
+              <div className='carousel123'>
                 <h2>Select a Date for {center.name}</h2>
                 <div className="carousel">
                   <Swiper
@@ -129,13 +129,15 @@ function MedicalCenterList({ centers, onBook }) {
                         <div 
                           className={`carousel-item ${selectedDate === date ? 'selected' : ''}`} 
                           onClick={() => handleDateSelect(date)}
-                          style={{fontSize: '14px', cursor: 'pointer', padding: '10px', textAlign: 'center'}}
+                          style={{ fontSize: '14px', cursor: 'pointer', padding: '10px', textAlign: 'center' }}
                         >
                           {date}
                         </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
+                  <div className="swiper-button-prev" style={{ color: 'black' }}>&lt;</div>
+                  <div className="swiper-button-next" style={{ color: 'black' }}>&gt;</div>
                 </div>
                 {carouselOpen && selectedDate && (
                   <BookingForm onTimeSelect={handleTimeSelect} />

@@ -136,8 +136,8 @@ function MedicalCenterList({ centers, onBook }) {
                       </SwiperSlide>
                     ))}
                   </Swiper>
-                  <div className="swiper-button-prev" style={{ color: 'black' }}>&lt;</div>
-                  <div className="swiper-button-next" style={{ color: 'black' }}>&gt;</div>
+                  <div  >&lt;</div>
+                  <div  >&gt;</div>
                 </div>
                 {carouselOpen && selectedDate && (
                   <BookingForm onTimeSelect={handleTimeSelect} />
